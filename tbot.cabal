@@ -1,0 +1,55 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: c87ed124083de633828d9a842e6b671b150a5127a5b16884852132cb809288aa
+
+name:           tbot
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/tbot#readme>
+homepage:       https://github.com/qweeze/tbot#readme
+bug-reports:    https://github.com/qweeze/tbot/issues
+author:         qweeze
+maintainer:     qweeeze@gmail.com
+copyright:      2020 qweeze
+license:        BSD3
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/qweeze/tbot
+
+library
+  exposed-modules:
+      TeleBot
+  other-modules:
+      Paths_tbot
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-conduit >=2.3 && <3
+    , http-types
+    , text
+  default-language: Haskell2010
+
+executable tbot-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_tbot
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bytestring
+    , http-conduit >=2.3 && <3
+    , http-types
+    , tbot
+    , text
+  default-language: Haskell2010
